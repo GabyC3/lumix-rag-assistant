@@ -1,0 +1,22 @@
+# Created by venv; see https://docs.python.org/3/library/venv.html
+
+.venv/
+venv/
+
+.env
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+build/
+dist/
+*.egg-info/
+
+.pytest_cache/
+.mypy_cache/
+
+.chroma/
+
+.DS_Store
+Thumbs.db
