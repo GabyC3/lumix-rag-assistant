@@ -167,15 +167,22 @@ Luego abrir el navegador en la dirección indicada por Streamlit.
 
 ---
 
+# 🖼 Capturas de pantalla
+
+## Consulta y respuesta
+
+![Consulta y respuesta](assets/chat.png)
+
 # 💬 Ejemplos de consultas
 
 - ¿Cómo funciona la garantía?
-- ¿Cuál es la política de devoluciones?
+- ¿Que evidencia se requiere para la devolucion?
 - ¿Qué métodos de pago están disponibles?
 - ¿Cómo funcionan los envíos?
-- ¿Cuál es el tiempo estimado de entrega?
 
 ---
+
+Este proyecto esta desplegado y activo en: https://lumix-ai.streamlit.app/
 
 # 👨‍💻 Autor
 
