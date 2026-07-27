@@ -1,6 +1,9 @@
 import streamlit as st
+from dotenv import load_dotenv
 
-from src.services.document_service import DocumentService
+load_dotenv()
+
+from src.rag.rag_pipeline import RAGPipeline
 
 st.set_page_config(
     page_title="Lumix AI Assistant",
@@ -8,24 +11,28 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("🤖 Lumix AI ")
+st.title("Lumix AI ")
 
-st.write("Sistema de consulta inteligente basado en documentación.")
-
-service = DocumentService()
-
-documents = service.load()
-
-st.success(f"Se cargaron {len(documents)} páginas.")
-
-pdfs = sorted(
-    set(
-        doc.metadata["source"].split("\\")[-1]
-        for doc in documents
-    )
+question = st.text_input(
+    "Realiza una consulta"
 )
 
-st.subheader("Documentos encontrados")
+if question:
 
-for pdf in pdfs:
-    st.write(f" {pdf}")
+    rag = RAGPipeline()
+
+    answer, docs = rag.ask(question)
+
+    st.subheader("Respuesta")
+
+    st.write(answer)
+
+    st.divider()
+
+    st.subheader("Documentos utilizados")
+
+    for doc in docs:
+
+        st.caption(
+            doc.metadata["source"]
+        )
