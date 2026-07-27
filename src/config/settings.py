@@ -1,4 +1,8 @@
+import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
@@ -11,6 +15,8 @@ CHUNK_SIZE = 1000
 CHUNK_OVERLAP = 200
 
 EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
+
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 MODEL_NAME = "gemini-3.5-flash-lite"
 
